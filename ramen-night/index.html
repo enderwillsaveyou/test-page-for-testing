@@ -20,31 +20,61 @@ main{max-width:1130px;margin:auto;padding:23px 16px 70px}header{display:flex;jus
 .estimator{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.calc{background:#27364c;border:1px solid #58687e;border-radius:15px;padding:15px}.calc h3{font-size:16px;margin:0 0 13px}.field{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:10px 0}.field label{font-size:12px;color:#dae2ef}.field input{width:110px;padding:9px;border-radius:9px;border:1px solid #75869d;background:#142237;color:#fff;text-align:right;font-weight:800}.calcTotal{border-top:1px solid #627189;margin-top:13px;padding-top:14px;display:flex;justify-content:space-between;font-size:20px;font-weight:900}.comparison{background:#1c463d;border:1px solid #448c6e;border-radius:13px;color:#d2ffe7;font-weight:850;padding:13px 15px;margin:13px 0 0;font-size:14px}
 .distControls{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:14px 0}.distControls label{font-size:12px;color:#d2dfef}.distControls input{width:90px;padding:10px 12px;background:#142437;color:white;border-radius:10px;border:1px solid #6c7c92}.note{font-size:11px!important;line-height:1.5!important;color:#abbdd0!important;margin-top:10px!important}.footer{font-size:11px;color:#a8bace;line-height:1.65;margin:24px 3px}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#c8f9d5;color:#143f31;border-radius:12px;padding:12px 16px;box-shadow:0 9px 30px #0005;font-weight:850;font-size:12px;z-index:8}.hidden{display:none}
 @media(max-width:940px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.bullets{grid-template-columns:1fr}}@media(max-width:650px){main{padding:12px 12px 50px}.hero{padding:19px}.heroArt{font-size:53px}.stats,.grid,.estimator{grid-template-columns:1fr}.restaurant{min-height:0}.panel{padding:16px}.topbar{align-items:flex-start}.headerButton{padding:9px;font-size:11px}.brand{gap:9px}.logo{font-size:32px}.votes{grid-template-columns:1fr 1fr}.vbox{padding:10px}}
+
+main{padding:12px 12px 60px}.smallHeader{margin:5px 0 12px;align-items:center}.smallHeader h1{font-size:clamp(26px,4vw,39px);margin:2px 0}.smallHeader .logo{font-size:32px}.smallHeader .eyebrow{font-size:10px;letter-spacing:.09em}
+.tinyHero{display:flex;justify-content:space-between;gap:12px;align-items:center;background:#29394e;padding:10px 13px;border:1px solid #53657a;border-radius:14px;margin-bottom:13px;font-size:12px;font-weight:750}
+.tinyHero button{background:#ffe2b9;border:0;color:#463020;white-space:nowrap;font-size:12px;padding:9px 11px;border-radius:10px}
+.heading{margin:8px 0 11px}.heading h2{font-size:21px}.heading p{font-size:11px;margin:2px 0 0}
+.stickyFilters{position:sticky;top:0;background:#111c2bef;backdrop-filter:blur(12px);z-index:10;border-bottom:1px solid #4a5b71;margin:0 -12px 10px}
+.filters{display:flex;overflow-x:auto;flex-wrap:nowrap;gap:8px;padding:10px 12px;margin:0;scrollbar-width:none}.filters::-webkit-scrollbar{display:none}.chip{white-space:nowrap;flex-shrink:0;padding:9px 12px}
+.ratingInstructions{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:8px 0 14px}.ratingInstructions b{font-size:14px}.ratingInstructions small{display:block;color:#adbed1;font-size:11px;margin-top:3px}.ratingInstructions .who{padding:9px 12px}
+.grid{gap:14px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.restaurant{padding:0;overflow:hidden;min-height:0;border-radius:19px;background:#fffaf3}
+.foodPhoto{position:relative;height:175px;background:linear-gradient(110deg,#e2b283,#9b6351);overflow:hidden}
+.emojiFallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:65px}
+.foodPhoto img{position:relative;z-index:1;display:block;width:100%;height:100%;object-fit:cover}
+.photoLabel{position:absolute;z-index:2;bottom:10px;left:10px;background:#182636df;color:#fff;padding:7px 11px;border-radius:99px;font-size:11px;font-weight:900}
+.foodBody{padding:13px 14px 14px}.cardTitle{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}.cardTitle h3{margin:0 0 5px;font-size:20px;flex:1;letter-spacing:-.045em}
+.bigRating{flex-shrink:0;background:#dff0dd;color:#1c6249;border-radius:9px;padding:5px 7px;font-size:14px;font-weight:900;white-space:nowrap}
+.bigRating small{display:block;font-size:9px;font-weight:700;color:#3e6e5a}.town{font-size:11px}.popular{font-size:12px;margin:8px 0;line-height:1.5}
+.foodQuick{display:flex;align-items:center;justify-content:space-between;gap:9px;margin:9px 0 0;padding-top:8px;border-top:1px solid #e2e3e5;font-size:11px;color:#576879}.foodQuick b{font-size:11px;color:#8c562d;text-align:right}
+.myStars{background:#f3eee6;border-radius:12px;padding:8px 9px;display:flex;align-items:center;justify-content:space-between;gap:4px;margin:10px 0}
+.myStars span{font-size:11px;color:#5c4b41;font-weight:850}.scoreRow{display:flex;gap:0;justify-content:flex-end}
+.scoreStar{border:0;background:none;color:#c4c0b9;font-size:25px;line-height:1.1;min-width:27px;padding:2px;cursor:pointer}
+.scoreStar.lit{color:#e6a332}.scoreStar:focus-visible{outline:2px solid #9a652e}
+.restaurant .links{display:flex;gap:7px}.restaurant .menulink{font-size:12px;padding:11px 5px;min-width:0}
+.restaurant .vote{margin-top:9px;padding:10px;border-radius:10px;font-size:12px}
+.reviewFold{margin-top:10px;font-size:12px;color:#657182}.reviewFold summary{cursor:pointer;text-decoration:underline;text-underline-offset:2px}.reviewFold p{line-height:1.45;margin:7px 0 0}
+.ratingResults{background:#244438;color:#caffdf;font-size:12px;font-weight:800;padding:10px 12px;border-radius:10px;margin-bottom:11px}
+.closedPanel{margin-top:13px;padding:14px 16px}.closedPanel>summary{cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:900;list-style:none}
+.closedPanel>summary::-webkit-details-marker{display:none}.closedPanel[open]>summary span{transform:rotate(180deg)}.closedPanel>summary span{color:#ffc58f}
+.closedPanel h2{display:none}.closedPanel[open]>p{margin:15px 0}
+#voting{padding:15px;margin-top:18px}#voting h2{font-size:18px}
+@media(max-width:940px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){main{padding:10px 12px 55px}.grid{grid-template-columns:1fr;gap:13px}.foodPhoto{height:187px}.smallHeader h1{font-size:27px}.heading h2{font-size:19px}.heading .select{font-size:11px;max-width:136px}.ratingInstructions .who{padding:9px 10px}.foodBody{padding:13px 14px 14px}.cardTitle h3{font-size:22px}.scoreStar{font-size:27px}}
 </style></head><body><main>
-<header><div class="brand"><span class="logo">🥡</span><div><div class="eyebrow">Mike + Kate · Ringwood NJ</div><h1>Tonight's Takeout</h1><p class="small">Saturday, Nov 7 · a smarter dinner decision</p></div></div><button id="shareTop" class="headerButton">↗ Share</button></header>
-<section class="hero"><div><div class="eyebrow">Twelve restaurants · eight kinds of food</div><h2>Skip the scrolling.<br>Find something great.</h2><p>Explore real delivery menus, customer favorites and distance-cost budgets. Vote on a favorite, then compare the actual checkout prices before ordering.</p><div class="quick"><a href="#choices">Explore dinner ↓</a><a href="#cost" class="alt">Compare delivery costs ↗</a></div></div><div class="heroArt">🍜</div></section>
-<section class="stats"><div class="stat"><small>Best Thai reviews</small><b>Thai Corner Bistro · 4.8 DoorDash</b></div><div class="stat"><small>Best local value check</small><b>Luigi's · compare pickup pricing</b></div><div class="stat"><small>Most variety</small><b>Ramen, Mexican, pizza, chicken & more</b></div></section>
-<section id="choices"><div class="heading"><div><h2>Choose your cuisine <span id="count" style="font-size:13px;color:#bccad9"></span></h2><p>Restaurant availability and fees depend on the delivery address.</p></div><select id="sort" class="select" aria-label="Sort restaurants"><option value="featured">Recommended first</option><option value="rating">Highest rating</option><option value="distance">Nearby first</option><option value="name">Name A–Z</option></select></div>
-<div id="filters" class="filters" role="group" aria-label="Filter food type"></div><div id="grid" class="grid"></div></section>
-<section id="distance" class="panel"><h2>🚗 How much does distance add?</h2><p>These are <b>budget cushions, not app quotes</b>. The page assumes a rough town-based trip distance from Ringwood (not your home). If you see the actual distance in DoorDash or Uber Eats, select a restaurant and replace its assumed mileage below.</p>
+<header class="smallHeader"><div class="brand"><span class="logo">🍽️</span><div><div class="eyebrow">Mike & Kate · Ringwood</div><h1>What's for dinner?</h1></div></div><button id="shareTop" class="headerButton">↗ Share</button></header><div class="tinyHero"><span>12 spots · 8 food styles</span><button id="surprise" class="chip active">🎲 Surprise me</button></div><section id="choices"><div class="heading"><div><h2>Choose your cuisine <span id="count" style="font-size:13px;color:#bccad9"></span></h2><p>Restaurant availability and fees depend on the delivery address.</p></div><select id="sort" class="select" aria-label="Sort restaurants"><option value="featured">Recommended first</option><option value="rating">Highest rating</option><option value="distance">Nearby first</option><option value="name">Name A–Z</option></select></div>
+<div class="stickyFilters"><div id="filters" class="filters" role="group" aria-label="Filter food type"></div></div><div class="ratingInstructions"><div><b>Rate what looks good</b><small>Tap 1–5 stars or choose a favorite</small></div><div class="people"><button id="asMike" class="who current" aria-pressed="true">Mike</button><button id="asKate" class="who" aria-pressed="false">Kate</button></div></div><div id="grid" class="grid"></div></section>
+<section id="voting" class="panel"><div class="voterow"><div><h2>🥢 Mike & Kate's dinner vote</h2><p>Select whose turn it is, then vote on any restaurant above.</p></div></div>
+<div class="votes"><div class="vbox"><small>Mike's pick</small><strong id="mVote">Not chosen yet</strong></div><div class="vbox"><small>Kate's pick</small><strong id="kVote">Not chosen yet</strong></div></div>
+<div class="ratingResults" id="ratingResults">Your ratings will show here.</div><div class="actions"><button class="btn" id="share">↗ Share updated picks</button><button class="btn secondary" id="copy">Copy voting link</button><button class="btn secondary" id="reset">Clear votes</button></div>
+<p class="note">Star scores and favorites travel in the shared link. They don't automatically sync between phones; send the updated link back to each other.</p></section>
+<details id="distance" class="panel closedPanel"><summary>🚗 Estimate distance fees <span>⌄</span></summary><h2>🚗 How much does distance add?</h2><p>These are <b>budget cushions, not app quotes</b>. The page assumes a rough town-based trip distance from Ringwood (not your home). If you see the actual distance in DoorDash or Uber Eats, select a restaurant and replace its assumed mileage below.</p>
 <div class="distControls"><label>Restaurant <select id="distancePlace" class="select"></select></label><label>Estimated road miles <input id="miles" type="number" min="0" max="60" step=".5" value="5"></label></div>
 <div class="comparison" id="distanceResult">Distance budgeting estimate will appear here.</div>
 <p class="note">Planning formula: set aside $0.50–$1.50 for each mile beyond the first 3 miles, as a discretionary buffer for possible extra service/long-range costs and a longer-trip tip. This is <b>our customizable planning assumption</b>, not a DoorDash or Uber per-mile rate. Actual fees can be zero or higher. Do not add this buffer to checkout totals if the app already includes delivery fees and tip.</p>
-</section>
-<section id="tips" class="panel"><h2>💡 Smart ways to order tonight</h2><p>Save on the total, not just a tempting "$0 delivery" banner.</p><div class="bullets">
+</details>
+<details id="tips" class="panel closedPanel"><summary>💡 Ways to save <span>⌄</span></summary><h2>💡 Smart ways to order tonight</h2><p>Save on the total, not just a tempting "$0 delivery" banner.</p><div class="bullets">
 <div class="advice"><span>01 · Compare menus</span><strong>App item markups can be significant</strong><p>For example, Luigi's large pizza is listed at $17.99 directly versus $20.24 on DoorDash, before fees or discounts. <a href="https://toast.app/r/luigis-pizza/order?diningOption=delivery" target="_blank" rel="noopener noreferrer">Check direct ordering ↗</a></p></div>
 <div class="advice"><span>02 · Use your benefits</span><strong>Check DashPass vs new-user Uber Eats</strong><p>Use the United Explorer card's activated DashPass if eligible. Then compare an Uber Eats first-order offer against the same basket. Promotions are account- and address-specific.</p></div>
 <div class="advice"><span>03 · Watch the distance</span><strong>Delivery fees aren't just a flat rate</strong><p>DoorDash says distance can affect its service fee, and some deliveries beyond 10 miles get long-distance fees. Uber Eats may show a Long Range Fee. <a href="https://about.doordash.com/en-us/news/updating-our-fee-structure" target="_blank" rel="noopener noreferrer">DoorDash fee policy ↗</a></p></div>
-</div></section>
-<section id="cost" class="panel"><h2>💵 Real checkout comparison</h2><p>Once you choose food, build the <b>same cart</b> on both apps and enter the exact amounts before tapping Place Order. Include the tip you intend to leave. The lower checkout total wins, regardless of distance estimates above.</p><div class="estimator">
+</div></details>
+<details id="cost" class="panel closedPanel"><summary>💵 Compare checkout totals <span>⌄</span></summary><h2>💵 Real checkout comparison</h2><p>Once you choose food, build the <b>same cart</b> on both apps and enter the exact amounts before tapping Place Order. Include the tip you intend to leave. The lower checkout total wins, regardless of distance estimates above.</p><div class="estimator">
 <div class="calc"><h3>🚗 DoorDash</h3><div id="ddFields"></div><div class="calcTotal"><span>Final total</span><span id="ddTotal">$0.00</span></div></div>
 <div class="calc"><h3>🛵 Uber Eats</h3><div id="ueFields"></div><div class="calcTotal"><span>Final total</span><span id="ueTotal">$0.00</span></div></div></div>
-<div class="comparison" id="bestApp">Enter your prices to compare.</div><p class="note">Subtract only valid discounts. Tax, tips and app fees may differ. Do not double-count the distance allowance once you have actual checkout figures.</p></section>
-<section id="voting" class="panel"><div class="voterow"><div><h2>🥢 Mike & Kate's dinner vote</h2><p>Select whose turn it is, then vote on any restaurant above.</p></div><div class="people"><button id="asMike" class="who current" aria-pressed="true">Mike</button><button id="asKate" class="who" aria-pressed="false">Kate</button></div></div>
-<div class="votes"><div class="vbox"><small>Mike's pick</small><strong id="mVote">Not chosen yet</strong></div><div class="vbox"><small>Kate's pick</small><strong id="kVote">Not chosen yet</strong></div></div>
-<div class="actions"><button class="btn" id="share">↗ Share updated picks</button><button class="btn secondary" id="copy">Copy voting link</button><button class="btn secondary" id="reset">Clear votes</button></div>
-<p class="note">Votes live in the URL, not a shared account. After voting, send the updated link to the other person. Votes do not synchronize automatically.</p></section>
-<p class="footer">Sources: linked restaurant menus and platform ratings checked Nov 7, 2026. Rating counts and prices may change. Delivery eligibility, hours, promotions, fee estimates and menu availability must be verified in your delivery app with your own address. Mileage values are illustrative defaults, not mapped routes. Nothing on this page orders food or accesses your payment details.</p>
+<div class="comparison" id="bestApp">Enter your prices to compare.</div><p class="note">Subtract only valid discounts. Tax, tips and app fees may differ. Do not double-count the distance allowance once you have actual checkout figures.</p></details>
+
+<p class="footer">Food photos illustrate cuisines and are not actual restaurant dishes. Sources: linked restaurant menus and platform ratings checked Nov 7, 2026. Rating counts and prices may change. Delivery eligibility, hours, promotions, fee estimates and menu availability must be verified in your delivery app with your own address. Mileage values are illustrative defaults, not mapped routes. Nothing on this page orders food or accesses your payment details.</p>
 </main><div id="toast" class="toast hidden" role="status"></div>
 <script>
 "use strict";
@@ -62,11 +92,25 @@ const restaurants=[
 {id:"sam",name:"Sam’s Bar & Grill",town:"Ringwood",kind:"Burgers & Wings",rating:4.6,count:"60",app:"Uber Eats",tag:"Burger & wings",dishes:"Boneless wings · burger sliders · hot pretzel",review:"Local sports-bar takeout with wings and burgers; fewer delivery reviews.",sample:"Boneless wings $12.40 · Uber Eats",miles:3,ue:"https://guava.failover.uber.com/store/sams-bar-%26-grill/KTd0zDhvVSm7stK86hFDlw"},
 {id:"spring",name:"Spring Restaurant",town:"Ringwood",kind:"Chinese",rating:null,count:"Few",app:"Uber Eats",tag:"Neighborhood Chinese",dishes:"Dumplings · sesame chicken · pork egg rolls",review:"A Ringwood Chinese takeout option. App rating has too few reviews to rely on.",sample:"See live Uber Eats menu",miles:3,ue:"https://www.ubereats.com/store/spring-restaurant/_O7seN43UuaOhFybYdQTgw"}
 ];
+const pics={
+thai:["https://images.unsplash.com/photo-1707546944460-dda9069b9c1e?auto=format&fit=crop&w=900&q=70","🍜"],
+som:["https://unsplash.com/photos/TgptxYRWZLo/download?force=true&w=900","🌮"],
+luigi:["https://images.unsplash.com/photo-1564936281291-294551497d81?auto=format&fit=crop&w=900&q=70","🍕"],
+fire:["https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=900&q=70","🍗"],
+mr:["https://unsplash.com/photos/rAyCBQTH7ws/download?force=true&w=900","🍜"],
+yuki:["https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=900&q=70","🍣"],
+ter:["https://unsplash.com/photos/egzPIj_8MFA/download?force=true&w=900","🍜"],
+raku:["https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=900&q=70","🍣"],
+namaste:["https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=900&q=70","🍛"],
+hoking:["https://unsplash.com/photos/g7ue2JBhDro/download?force=true&w=900","🥟"],
+sam:["https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=70","🍔"],
+spring:["https://unsplash.com/photos/g7ue2JBhDro/download?force=true&w=900","🥟"]
+};
 const filters=["All","Ramen","Thai","Mexican","Pizza","Chicken","Chinese","Sushi","Indian","Burgers"];
 let filter="All",sort="featured",who="m";
 const q=new URLSearchParams(location.search);
 const valid=id=>restaurants.some(r=>r.id===id)?id:"";
-const votes={m:valid(q.get("m")),k:valid(q.get("k"))};
+const votes={m:valid(q.get("m")),k:valid(q.get("k"))};const scores={m:{},k:{}};try{const fromLink=JSON.parse(q.get("r")||"{}");for(const person of ["m","k"])for(const [id,val] of Object.entries(fromLink[person]||{}))if(valid(id)&&Number.isInteger(val)&&val>=1&&val<=5)scores[person][id]=val;}catch(e){}let randomHighlight="";
 const dists=Object.fromEntries(restaurants.map(r=>[r.id,r.miles]));
 const by=id=>document.getElementById(id);
 function budget(mi){const ex=Math.max(0,Number(mi)||0)-3;return [Math.max(0,ex*.5),Math.max(0,ex*1.5)];}
@@ -81,20 +125,27 @@ by("grid").innerHTML=list.map(p=>{
 const selected=votes[who]===p.id;
 const [lo,hi]=budget(dists[p.id]);
 const link=(url,type)=>url?'<a class="menulink '+(type==="Uber Eats"?"uber":type==="Direct"?"direct":"")+'" href="'+url+'" target="_blank" rel="noopener noreferrer">'+type+' ↗</a>':"";
-return '<article class="restaurant '+(selected?"voted":"")+'"><div class="top"><span class="tag">'+p.tag+'</span><span class="rate">'+(p.rating?p.rating.toFixed(1)+" ★ · "+p.count+" "+p.app:"Ratings limited")+'</span></div><h3>'+p.name+'</h3><div class="town">📍 '+p.town+', NJ</div><div class="cuisine">'+p.kind+'</div><p class="popular">'+p.dishes+'</p><p class="review">'+p.review+'</p><span class="item">'+p.sample+'</span><div class="distance"><b>🚗 Illustrative '+dists[p.id]+'-mile trip</b><p>Extra distance budget: <span class="money">'+brief(lo)+'–'+brief(hi)+'</span> above a nearby order. Not an app quote.</p></div><div class="grow"></div><div class="links">'+link(p.dd,"DoorDash")+link(p.ue,"Uber Eats")+link(p.direct,"Direct")+'</div><button class="vote '+(selected?"picked":"")+'" data-vote="'+p.id+'">'+(selected?"✓ Your pick":"Vote for dinner")+'</button></article>';
+const pic=pics[p.id]||["","🥡"];
+const sc=scores[who][p.id]||0;
+const starBtns=Array.from({length:5},(_,i)=>'<button type="button" class="scoreStar '+(i<sc?'lit':'')+'" data-star="'+p.id+'" data-value="'+(i+1)+'" aria-label="Rate '+p.name+' '+(i+1)+' out of 5" aria-pressed="'+(sc===i+1)+'">★</button>').join("");
+const [low,high]=budget(dists[p.id]);
+return '<article class="restaurant '+(selected?"voted":"")+'" id="card-'+p.id+'"><div class="foodPhoto"><span class="emojiFallback">'+pic[1]+'</span><img src="'+pic[0]+'" alt="Illustrative '+p.kind+' food photo" loading="lazy" decoding="async" onerror="this.style.display=\'none\'"><span class="photoLabel">'+p.kind+'</span></div><div class="foodBody"><div class="cardTitle"><h3>'+p.name+'</h3><span class="bigRating">'+(p.rating?"★ "+p.rating.toFixed(1):"Unrated")+'<small>'+p.app+' · '+p.count+'</small></span></div><div class="town">📍 '+p.town+' · about '+dists[p.id]+' miles (estimate)</div><p class="popular">'+p.dishes+'</p><div class="foodQuick"><span>'+p.tag+'</span><b>+ '+brief(low)+'–'+brief(high)+' distance cushion</b></div><div class="myStars"><span>'+(who==="m"?"Mike":"Kate")+"'s rating"+'</span><div class="scoreRow">'+starBtns+'</div></div><div class="links">'+link(p.dd,"DoorDash")+link(p.ue,"Uber Eats")+link(p.direct,"Direct")+'</div><button class="vote '+(selected?"picked":"")+'" data-vote="'+p.id+'">'+(selected?"✓ Your favorite":"♡ Choose as favorite")+'</button><details class="reviewFold"><summary>Read reviews & sample price</summary><p>'+p.review+'</p><p>'+p.sample+'</p></details></div></article>';
 }).join("");
 document.querySelectorAll("[data-vote]").forEach(b=>b.addEventListener("click",()=>{votes[who]=b.dataset.vote;saveURL();render();toast((who==="m"?"Mike":"Kate")+"'s pick saved. Share the link!")}));
+document.querySelectorAll("[data-star]").forEach(b=>b.addEventListener("click",()=>{const v=+b.dataset.value,id=b.dataset.star;if(scores[who][id]===v)delete scores[who][id];else scores[who][id]=v;saveURL();render();}));
+const best=p=>{const values=Object.entries(scores[p]).sort((a,b)=>b[1]-a[1]);if(!values.length)return "No ratings yet";return (restaurants.find(x=>x.id===values[0][0])?.name||"")+": "+values[0][1]+"/5 ★";};
+by("ratingResults").textContent="Mike: "+best("m")+" · Kate: "+best("k");
 by("mVote").textContent=restaurants.find(p=>p.id===votes.m)?.name||"Not chosen yet";
 by("kVote").textContent=restaurants.find(p=>p.id===votes.k)?.name||"Not chosen yet";
 by("asMike").classList.toggle("current",who==="m");by("asKate").classList.toggle("current",who==="k");
 by("asMike").setAttribute("aria-pressed",who==="m");by("asKate").setAttribute("aria-pressed",who==="k");
 }
-function url(){let u=new URL(location.href);u.search="";if(votes.m)u.searchParams.set("m",votes.m);if(votes.k)u.searchParams.set("k",votes.k);return u.toString();}
+function url(){let u=new URL(location.href);u.search="";if(votes.m)u.searchParams.set("m",votes.m);if(votes.k)u.searchParams.set("k",votes.k);if(Object.keys(scores.m).length||Object.keys(scores.k).length)u.searchParams.set("r",JSON.stringify(scores));return u.toString();}
 function saveURL(){history.replaceState(null,"",url())}
 let toastTimer;function toast(t){const el=by("toast");el.textContent=t;el.classList.remove("hidden");clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.add("hidden"),3200)}
 function copy(t){if(navigator.clipboard?.writeText){navigator.clipboard.writeText(t).then(()=>toast("Link copied!"),()=>prompt("Copy link",t))}else prompt("Copy link",t)}
 async function share(){if(navigator.share){try{await navigator.share({title:"Tonight's Takeout",text:"Let's choose dinner! Here are our picks:",url:url()});return}catch(e){if(e.name==="AbortError")return}}copy(url())}
-by("shareTop").onclick=share;by("share").onclick=share;by("copy").onclick=()=>copy(url());by("reset").onclick=()=>{votes.m="";votes.k="";saveURL();render();toast("Votes cleared")};
+by("surprise").onclick=()=>{const ps=selectedPlaces();const p=ps[Math.floor(Math.random()*ps.length)];randomHighlight=p.id;render();by("card-"+p.id)?.scrollIntoView({behavior:"smooth",block:"center"});toast("How about "+p.name+"?")};by("shareTop").onclick=share;by("share").onclick=share;by("copy").onclick=()=>copy(url());by("reset").onclick=()=>{votes.m="";votes.k="";saveURL();render();toast("Votes cleared")};
 by("asMike").onclick=()=>{who="m";render()};by("asKate").onclick=()=>{who="k";render()};
 by("sort").onchange=e=>{sort=e.target.value;render()};
 by("distancePlace").innerHTML=restaurants.map(p=>'<option value="'+p.id+'">'+p.name+'</option>').join("");
