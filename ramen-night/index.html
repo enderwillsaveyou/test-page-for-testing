@@ -52,9 +52,33 @@ main{padding:12px 12px 60px}.smallHeader{margin:5px 0 12px;align-items:center}.s
 #voting{padding:15px;margin-top:18px}#voting h2{font-size:18px}
 @media(max-width:940px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:700px){main{padding:10px 12px 55px}.grid{grid-template-columns:1fr;gap:13px}.foodPhoto{height:187px}.smallHeader h1{font-size:27px}.heading h2{font-size:19px}.heading .select{font-size:11px;max-width:136px}.ratingInstructions .who{padding:9px 10px}.foodBody{padding:13px 14px 14px}.cardTitle h3{font-size:22px}.scoreStar{font-size:27px}}
-</style></head><body><main>
-<header class="smallHeader"><div class="brand"><span class="logo">🍽️</span><div><div class="eyebrow">Mike & Kate · Ringwood</div><h1>What's for dinner?</h1></div></div><button id="shareTop" class="headerButton">↗ Share</button></header><div class="tinyHero"><span>12 spots · 8 food styles</span><button id="surprise" class="chip active">🎲 Surprise me</button></div><section id="choices"><div class="heading"><div><h2>Choose your cuisine <span id="count" style="font-size:13px;color:#bccad9"></span></h2><p>Restaurant availability and fees depend on the delivery address.</p></div><select id="sort" class="select" aria-label="Sort restaurants"><option value="featured">Recommended first</option><option value="rating">Highest rating</option><option value="distance">Nearby first</option><option value="name">Name A–Z</option></select></div>
-<div class="stickyFilters"><div id="filters" class="filters" role="group" aria-label="Filter food type"></div></div><div class="ratingInstructions"><div><b>Rate what looks good</b><small>Tap 1–5 stars or choose a favorite</small></div><div class="people"><button id="asMike" class="who current" aria-pressed="true">Mike</button><button id="asKate" class="who" aria-pressed="false">Kate</button></div></div><div id="grid" class="grid"></div></section>
+
+/* Streamlined top: title directly into the restaurant tiles. */
+.smallHeader{padding:0;margin:2px 0 13px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.smallHeader .brand{min-width:0;display:block}.smallHeader h1{margin:0;font-size:clamp(23px,3.4vw,36px);line-height:1.14;letter-spacing:-.055em}
+.headerControls{display:flex;gap:8px;align-items:center;flex-shrink:0}
+.headerControls .people{display:flex;gap:4px}
+.headerControls .who{padding:8px 9px;font-size:11px;border-radius:9px}
+.headerControls .headerButton{padding:9px 10px;border-radius:9px}
+.browseTools{margin-top:16px}.browseTools .filters{position:static;display:flex;flex-wrap:wrap;overflow:visible;padding:7px 0 13px;margin:0}
+.browseTools .heading{margin-top:14px}
+#choices{margin:0}
+@media(max-width:650px){
+ .smallHeader h1{font-size:22px}
+ .smallHeader{margin-bottom:12px}
+ .headerControls{gap:5px}
+ .headerControls .who{padding:7px 7px;font-size:10px}
+ .headerControls .headerButton{padding:8px 8px;font-size:10px}
+ .browseTools .heading h2{font-size:17px}
+}</style></head><body><main>
+<header class="smallHeader"><div class="brand"><h1>What's for dinner?</h1></div><div class="headerControls"><div class="people" aria-label="Rate as"><button id="asMike" class="who current" aria-pressed="true">Mike</button><button id="asKate" class="who" aria-pressed="false">Kate</button></div><button id="shareTop" class="headerButton">Share ↗</button></div></header>
+<section id="choices"><div id="grid" class="grid"></div></section>
+<details class="panel closedPanel browseTools" id="browseTools"><summary>Browse by cuisine or sort <span>⌄</span></summary>
+<div class="heading"><div><h2>Browse restaurants <span id="count"></span></h2></div>
+<select id="sort" class="select" aria-label="Sort restaurants"><option value="featured">Recommended first</option><option value="rating">Highest rating</option><option value="distance">Nearby first</option><option value="name">Name A–Z</option></select></div>
+<div id="filters" class="filters" role="group" aria-label="Filter food type"></div>
+<button id="surprise" class="btn secondary" type="button">🎲 Surprise me</button>
+</details>
 <section id="voting" class="panel"><div class="voterow"><div><h2>🥢 Mike & Kate's dinner vote</h2><p>Select whose turn it is, then vote on any restaurant above.</p></div></div>
 <div class="votes"><div class="vbox"><small>Mike's pick</small><strong id="mVote">Not chosen yet</strong></div><div class="vbox"><small>Kate's pick</small><strong id="kVote">Not chosen yet</strong></div></div>
 <div class="ratingResults" id="ratingResults">Your ratings will show here.</div><div class="actions"><button class="btn" id="share">↗ Share updated picks</button><button class="btn secondary" id="copy">Copy voting link</button><button class="btn secondary" id="reset">Clear votes</button></div>
