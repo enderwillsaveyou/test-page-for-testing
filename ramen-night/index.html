@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#101726">
+<title>Ramen Night — Mike & Kate</title>
+<meta name="description" content="Four ramen spots near Ringwood. Compare menus, reviews and vote on dinner.">
+<style>
+:root{--bg:#111827;--surface:#1c2637;--edge:#334155;--cream:#fffaf2;--orange:#fbad6b;--pink:#ff6e62;--teal:#7fe3c0;--ink:#122033;--muted:#aebace}
+*{box-sizing:border-box} body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:#f6f3eb;-webkit-font-smoothing:antialiased}
+body:before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse at top right,#29334b 0%,transparent 45%)}
+a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}main{width:min(1040px,calc(100% - 32px));margin:0 auto;padding:26px 0 78px}
+.eyebrow{letter-spacing:.16em;text-transform:uppercase;font-weight:800;font-size:11px;color:var(--orange)}
+header{padding:24px 4px 21px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.logo{display:flex;gap:13px;align-items:center}.bowl{font-size:42px;filter:drop-shadow(0 3px 5px #0005)}
+h1{margin:2px 0 3px;font-size:clamp(32px,6vw,52px);line-height:1.02;letter-spacing:-.055em}.subtitle{color:var(--muted);font-size:14px;margin:0}
+.pill{border:1px solid #4c5b70;color:#d6dce4;background:#1d2a40;padding:8px 11px;border-radius:99px;font-size:12px;white-space:nowrap}
+.hero{background:linear-gradient(115deg,#ff745f,#ffbe77);color:#25161d;border-radius:24px;padding:24px 26px;display:flex;justify-content:space-between;align-items:center;gap:20px;box-shadow:0 12px 30px #04080f35}
+.hero strong{font-size:25px;letter-spacing:-.04em;line-height:1.1;display:block;margin:6px 0}.hero p{max-width:510px;margin:4px 0 0;font-size:14px;line-height:1.5}.heroArt{font-size:75px;transform:rotate(-12deg);text-shadow:0 5px 2px #0002}
+.toolbar{margin:22px 0 18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:13px;align-items:center}.toolbar h2{font-size:20px;letter-spacing:-.035em;margin:0}
+.chips{display:flex;gap:6px;flex-wrap:wrap}.chip{border-radius:99px;padding:9px 13px;border:1px solid var(--edge);background:transparent;color:#b9c7db;font-size:12px;font-weight:700}.chip.active{background:var(--cream);border-color:var(--cream);color:#1d2737}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.restaurant{background:var(--cream);color:var(--ink);border-radius:19px;padding:19px 20px;position:relative;border:2px solid transparent;transition:transform .12s,border-color .12s;min-height:313px;display:flex;flex-direction:column}
+.restaurant:hover{transform:translateY(-2px)}.restaurant.voted{border-color:var(--orange)}
+.rtop{display:flex;align-items:flex-start;justify-content:space-between;gap:9px}.index{font-size:12px;font-weight:900;background:#ffe6cb;color:#9a3b24;border-radius:99px;padding:5px 9px;white-space:nowrap}
+.star{font-size:13px;background:#ecf5eb;color:#205c3f;padding:5px 8px;border-radius:99px;font-weight:850;white-space:nowrap}
+.restaurant h3{font-size:23px;line-height:1.07;letter-spacing:-.055em;margin:13px 0 5px}.town{font-size:12px;color:#5e6d78;font-weight:700}.desc{color:#475767;line-height:1.43;font-size:13px;margin:11px 0 7px}.dish{font-size:13px;line-height:1.5;margin:4px 0 7px}.dish b{color:#122033}.review{border-left:3px solid #f6b97d;padding-left:10px;font-size:12px;line-height:1.45;color:#536171;margin:5px 0 12px}
+.spacer{flex:1}.links{display:flex;gap:8px;flex-wrap:wrap}.menu{border-radius:11px;padding:10px 13px;background:#162334;color:white;text-align:center;font-size:12px;font-weight:800;flex:1;min-width:120px}.menu.secondary{background:#fff;border:1px solid #bcc7d0;color:#142538}.vote{width:100%;padding:11px;margin-top:10px;background:#ffdcaf;border:0;border-radius:11px;color:#65351c;font-size:13px;font-weight:900}.vote.selected{background:#1b775c;color:#fff}
+.desk{margin:22px 0 0;padding:18px;background:var(--surface);border:1px solid var(--edge);border-radius:20px}.deskHead{display:flex;align-items:start;justify-content:space-between;gap:12px;flex-wrap:wrap}.desk h2{font-size:21px;margin:0 0 4px}.desk p{color:#afbdd0;font-size:13px;line-height:1.55;margin:4px 0 12px}
+.people{display:flex;gap:8px}.who{background:#2a394f;color:#cbd6e5;border:1px solid #526178;border-radius:11px;padding:10px 15px;font-size:13px;font-weight:800}.who.current{background:var(--teal);border-color:var(--teal);color:#083a32}
+.votes{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:15px}.voteBox{border:1px solid #45536a;border-radius:13px;padding:13px}.voteBox small{color:#9badc6;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em}.voteBox strong{display:block;font-size:15px;margin-top:5px}.actions{display:flex;gap:8px;margin-top:13px;flex-wrap:wrap}.primary{background:var(--orange);border:0;color:#241c1b;border-radius:12px;padding:12px 16px;font-size:13px;font-weight:900}.quiet{border:1px solid #5b6b82;background:#243146;color:#f2f3f5;border-radius:12px;padding:12px 16px;font-size:13px;font-weight:800}
+.hint{font-size:11px!important;color:#8a9aae!important;margin:10px 0 0!important}.footer{color:#9cacbe;font-size:11px;line-height:1.6;margin:24px 4px 0}
+.hidden{display:none!important}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);color:#10201b;background:#b5f3cc;padding:12px 16px;border-radius:12px;font-weight:750;box-shadow:0 10px 30px #0004;max-width:90%;z-index:5}
+@media(max-width:700px){main{width:min(100% - 24px,500px);padding-top:8px}header{align-items:flex-start}.pill{display:none}.hero{padding:18px}.hero strong{font-size:22px}.heroArt{font-size:49px}.grid{grid-template-columns:1fr}.restaurant{min-height:0}.toolbar{align-items:flex-start}.votes{grid-template-columns:1fr 1fr}.logo{gap:7px}.bowl{font-size:35px}.desk{padding:14px}}
+</style>
+</head>
+<body>
+<main>
+<header><div class="logo"><span class="bowl">🍜</span><div><div class="eyebrow">Tonight's mission</div><h1>Ramen Night</h1><p class="subtitle">Mike & Kate · Ringwood, New Jersey</p></div></div><span class="pill">Saturday · November 7</span></header>
+<section class="hero"><div><div class="eyebrow" style="color:#5c2d28">Four spots. One dinner.</div><strong>Broth battles, no bad choices.</strong><p>Browse the menus, see what people like, and cast your pick. Share your vote so you can decide together.</p></div><div class="heroArt" aria-hidden="true">🥢</div></section>
+<section class="toolbar"><h2>Pick your bowl <span style="color:#b9c4d4;font-size:13px;font-weight:500">(4 places)</span></h2><div class="chips" role="group" aria-label="Filter places"><button class="chip active" data-filter="all">All 4</button><button class="chip" data-filter="ramen">Ramen first</button><button class="chip" data-filter="near">Closer options</button></div></section>
+<section id="grid" class="grid" aria-label="Restaurant choices"></section>
+<section class="desk" id="voting"><div class="deskHead"><div><h2>🥢 The dinner vote</h2><p>Choose who's voting, then tap your favorite restaurant above.</p></div><div class="people" role="group" aria-label="Who is voting?"><button id="asMike" class="who current" aria-pressed="true">Mike</button><button id="asKate" class="who" aria-pressed="false">Kate</button></div></div><div class="votes"><div class="voteBox"><small>Mike's pick</small><strong id="mVote">Not picked yet</strong></div><div class="voteBox"><small>Kate's pick</small><strong id="kVote">Not picked yet</strong></div></div><div class="actions"><button id="share" class="primary">↗ Share picks</button><button id="copy" class="quiet">Copy voting link</button><button id="reset" class="quiet">Clear votes</button></div><p class="hint">Votes are saved inside the link, not in a shared account. After choosing, send the updated link to the other person. It won't update automatically across phones.</p></section>
+<p class="footer">Ratings and dish highlights reflect available delivery-app listings and reviews; they aren't a live guarantee. Check delivery area, current hours, prices and fees at checkout. A new Uber Eats offer or an active Chase DashPass benefit may change the best deal. Raku specializes more in sushi than ramen.</p>
+</main><div class="toast hidden" id="toast" role="status"></div>
+<script>
+"use strict";
+const places=[
+{id:"mr",name:"Mr. Ramen + Miss Korea",city:"Pompton Lakes",rating:"4.6 ★ · 400+ Uber Eats ratings",tag:"Best for ramen + wings",category:"ramen near",dishes:"Tonkotsu ramen · spicy Fire ramen · gyoza · Korean fried chicken",review:"Customers highlight the ramen, dumplings and Korean dishes. Reports on consistency are mixed.",uber:"https://www.ubereats.com/store/mr-ramen/iF-fnedgSvy5qn_WIuVJNw",dash:"https://www.doordash.com/store/miss-korea-24459042/"},
+{id:"yuki",name:"Yuki Japanese Restaurant",city:"Oakland",rating:"4.7 ★ · 1,000+ DoorDash ratings",tag:"Best for variety",category:"ramen near",dishes:"Spicy ramen · tonkotsu ramen · gyoza · sushi rolls",review:"Reviewers often praise fresh sushi, portions and variety; it's not strictly a ramen restaurant.",uber:"https://www.ubereats.com/search?q=Yuki%20Japanese%20Restaurant%20Oakland%20NJ",dash:"https://www.doordash.com/store/yuki-japanese-restaurant-oakland-176941/"},
+{id:"ter",name:"Teriyaki Bowl Ramen Bar",city:"Wayne",rating:"4.7 ★ · 1,000+ DoorDash ratings",tag:"Most ramen-focused",category:"ramen",dishes:"Tonkotsu ramen · miso ramen · shoyu ramen · pork buns",review:"Customers mention flavorful broth, generous portions and delivery packaging.",uber:"https://www.ubereats.com/search?q=Teriyaki%20Bowl%20Wayne%20NJ",dash:"https://www.doordash.com/store/teriyaki-bowl---ramen-bar-poke-bowl-%26-sushi-28116543/"},
+{id:"raku",name:"Raku Sushi",city:"Ringwood",rating:"4.8 ★ · 200+ DoorDash ratings",tag:"Closest / sushi option",category:"near",dishes:"Seafood spicy miso ramen · pork gyoza · crunchy spicy tuna roll",review:"DoorDash highlights gyoza and crunchy spicy tuna roll as best sellers; ramen choice is limited.",uber:"",dash:"https://www.doordash.com/en/store/raku-sushi-26106558/"}
+];
+let params=new URLSearchParams(location.search);
+let votes={m:places.some(p=>p.id===params.get("m"))?params.get("m"):"",k:places.some(p=>p.id===params.get("k"))?params.get("k"):""};
+let who=params.get("who")==="k"?"k":"m";
+let filter="all";
+const byId=id=>document.getElementById(id);
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function render(){
+byId("grid").innerHTML=places.filter(p=>filter==="all"||p.category.includes(filter)).map((p,i)=>{
+const selected=votes[who]===p.id, other=votes[who==="m"?"k":"m"]===p.id;
+return '<article class="restaurant '+(selected?"voted":"")+'"><div class="rtop"><span class="index">'+escapeHtml(p.tag)+'</span><span class="star">'+escapeHtml(p.rating)+'</span></div><h3>'+escapeHtml(p.name)+'</h3><span class="town">📍 '+escapeHtml(p.city)+', NJ</span><p class="desc"><b>Popular dishes</b></p><p class="dish">'+escapeHtml(p.dishes)+'</p><p class="review">“'+escapeHtml(p.review)+'”</p><div class="spacer"></div><div class="links">'+(p.uber?'<a class="menu secondary" href="'+p.uber+'" target="_blank" rel="noopener noreferrer">Uber Eats ↗</a>':'')+'<a class="menu" href="'+p.dash+'" target="_blank" rel="noopener noreferrer">DoorDash ↗</a></div><button class="vote '+(selected?"selected":"")+'" data-vote="'+p.id+'">'+(selected?"✓ Your pick":(other?"♥ Other person picked this · ":"")+"Vote for this place")+'</button></article>';
+}).join("");
+document.querySelectorAll("[data-vote]").forEach(btn=>btn.addEventListener("click",()=>{
+votes[who]=btn.dataset.vote;saveUrl();render();toast((who==="m"?"Mike":"Kate")+"'s pick saved — share the link!");
+}));
+byId("mVote").textContent=places.find(p=>p.id===votes.m)?.name||"Not picked yet";
+byId("kVote").textContent=places.find(p=>p.id===votes.k)?.name||"Not picked yet";
+byId("asMike").classList.toggle("current",who==="m");byId("asKate").classList.toggle("current",who==="k");byId("asMike").setAttribute("aria-pressed",who==="m");byId("asKate").setAttribute("aria-pressed",who==="k");
+document.querySelectorAll("[data-filter]").forEach(b=>b.classList.toggle("active",b.dataset.filter===filter));
+}
+function getLink(){const u=new URL(location.href);u.search="";if(votes.m)u.searchParams.set("m",votes.m);if(votes.k)u.searchParams.set("k",votes.k);return u.toString();}
+function saveUrl(){history.replaceState(null,"",getLink());}
+let toastHandle;function toast(s){const t=byId("toast");t.textContent=s;t.classList.remove("hidden");clearTimeout(toastHandle);toastHandle=setTimeout(()=>t.classList.add("hidden"),3000);}
+function copyText(s){if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(s).then(()=>toast("Link copied! Paste it into your text."),()=>prompt("Copy this link:",s));}else prompt("Copy this link:",s);}
+byId("asMike").addEventListener("click",()=>{who="m";render();});byId("asKate").addEventListener("click",()=>{who="k";render();});
+document.querySelectorAll("[data-filter]").forEach(b=>b.addEventListener("click",()=>{filter=b.dataset.filter;render();}));
+byId("copy").addEventListener("click",()=>copyText(getLink()));
+byId("share").addEventListener("click",async()=>{const url=getLink(),name=who==="m"?"Mike":"Kate";if(navigator.share){try{await navigator.share({title:"Ramen Night",text:"Let's pick dinner! "+name+"'s updated ramen shortlist:",url});return;}catch(e){if(e.name==="AbortError")return;}}copyText(url);});
+byId("reset").addEventListener("click",()=>{votes={m:"",k:""};saveUrl();render();toast("Votes cleared.");});
+render();
+</script></body></html>
