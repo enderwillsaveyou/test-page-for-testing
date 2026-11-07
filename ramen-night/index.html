@@ -53,6 +53,32 @@ footer{font-size:10px;color:#9aadc2;line-height:1.5;margin:22px 3px}
 .hidden{display:none}
 @media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){main{padding:11px 11px 55px}.grid{grid-template-columns:1fr;gap:13px}h1{font-size:26px}.photo{height:195px}.card h2{font-size:22px}.primaryBtns{gap:7px}.linkBtn{font-size:12px;padding:14px 4px}.tools .columns{grid-template-columns:1fr}.card-body{padding:14px}}
+
+/* Streamlined delivery-first cards */
+header{margin:6px 0 14px}
+.grid{gap:15px}
+.card{background:#fffaf4}
+.card-body{padding:14px;gap:0}
+.photo{height:188px}
+.photo:after{content:"";position:absolute;z-index:1;inset:auto 0 0;height:76px;background:linear-gradient(transparent,#0d1c2a77);pointer-events:none}
+.tag{z-index:2;font-size:11px;background:#13273be9;padding:7px 11px}
+.card-head{display:flex;justify-content:space-between;align-items:baseline;gap:9px}
+.card-head h2{font-size:21px;line-height:1.15;letter-spacing:-.045em;margin:0}
+.card-head .place{font-size:11px;color:#697a8a;white-space:nowrap;font-weight:750}
+.featuredDish{margin:10px 0 5px;font-size:13px;font-weight:800;color:#303d45;line-height:1.5}
+.why{margin:3px 0 13px;font-size:12px;line-height:1.44;color:#6e7b88;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.platforms{display:flex;gap:7px;flex-wrap:wrap;margin-top:6px}
+.platformBtn{flex:1 1 105px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-radius:11px;padding:10px 8px;min-width:0;background:#192b40;color:white;font-size:12px}
+.platformBtn span{font-size:10px;color:#c2cee0;font-weight:650}
+.platformBtn b{font-size:13px;white-space:nowrap;font-weight:900}
+.platformBtn.uber{background:#f0f1f0;border:1px solid #c8d0d3;color:#16212c}
+.platformBtn.uber span{color:#606c77}
+.platformBtn.direct{background:#f9dec0;color:#6f432b;border:1px solid #e9c39c}
+.platformBtn.direct span{color:#916446}
+.supportLinks{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px}
+.supportLinks a{text-align:center;font-size:12px;font-weight:850;padding:10px 4px;border-radius:11px;color:#294663;border:1px solid #d0dce4;background:#f6f7f5}
+.platformBtn:hover,.supportLinks a:hover{filter:brightness(.96)}
+@media(max-width:620px){.photo{height:196px}.card-body{padding:14px}.card-head h2{font-size:22px}.featuredDish{font-size:13px}.why{font-size:12px}.platformBtn{padding:12px 8px}}
 </style>
 </head><body><main>
 <header><h1>What's for dinner?</h1><button id="share" class="share" type="button">Share ↗</button></header>
@@ -70,6 +96,8 @@ footer{font-size:10px;color:#9aadc2;line-height:1.5;margin:22px 3px}
 <script>
 "use strict";
 const restaurants=[
+{id:"money",name:"Money Pancho Mexican Grill",town:"Ringwood",kind:"Mexican",rating:4.7,count:"100+",app:"DoorDash",tag:"Local discovery",dishes:"Birria tacos · huge nachos · burritos",review:"DoorDash reviewers highlight the nachos and fresh, flavorful tacos; some report higher prices for burritos.",sample:"3 Pick Tacos $12.00 · DoorDash listing",miles:3,dd:"https://www.doordash.com/store/money-pancho-mexican-grill-ringwood-37628035/"},
+{id:"epoch",name:"Epoch Asian Fusion",town:"Pompton Lakes",kind:"Sushi & Asian",rating:4.8,count:"1k+",app:"DoorDash",tag:"Try something new",dishes:"Shrimp tempura roll · specialty sushi combos · crab wontons",review:"Delivery customers often praise its fresh sushi, generous rolls, and occasional complimentary extras.",sample:"E2 combo $28.60 · DoorDash listing",miles:6,dd:"https://www.doordash.com/store/epoch-asian-fusion-pompton-lakes-22931688/"},
 {id:"thai",name:"Thai Corner Bistro",town:"Wayne",kind:"Thai",rating:4.8,count:"1k+",app:"DoorDash",tag:"Noodle favorite",dishes:"Pad Thai · drunken noodles · pad see ew",review:"Delivery reviewers praise flavorful curries, generous portions and fresh noodles.",sample:"Pad Thai $16.00 · DoorDash",miles:10,dd:"https://www.doordash.com/store/thai-corner-bistro-wayne-1594774/",ue:"https://www.ubereats.com/store/thai-corner-bistro/Uj7lQE57XRm-fXp5ySUa8Q?diningMode=DELIVERY"},
 {id:"som",name:"The Sombrero Tacoria",town:"Pompton Lakes",kind:"Mexican",rating:4.7,count:"500+",app:"DoorDash",tag:"Birria tacos",dishes:"Birria taco trio · chicken quesadilla · steak burrito",review:"Many reviews call out the birria and flavorful chicken; mixed notes on some sides.",sample:"Birria trio $18.99 · DoorDash",miles:6,dd:"https://www.doordash.com/store/the-sombrero-tacoria-28825985/",ue:"https://www.ubereats.com/store/sombrero-tacoria-pompton-lakes/RAwkEbMmX5WEC2pHQNI6uw",direct:"https://thesombrero.com/menu/pompton-lakes"},
 {id:"luigi",name:"Luigi’s Pizza & Restaurant",town:"Ringwood",kind:"Pizza & Italian",rating:4.8,count:"1k+",app:"DoorDash",tag:"Pizza night",dishes:"Large pie · chicken parm pizza · garlic knots",review:"Large pizza is 96% liked on DoorDash; local feedback also mentions crispy wings.",sample:"Large pie $20.24 delivery · $17.99 direct",miles:3,dd:"https://www.doordash.com/store/luigi%E2%80%99s-pizza-and-restaurant-ringwood-530101/",direct:"https://toast.app/r/luigis-pizza/order?diningOption=delivery"},
@@ -84,6 +112,8 @@ const restaurants=[
 {id:"spring",name:"Spring Restaurant",town:"Ringwood",kind:"Chinese",rating:null,count:"Few",app:"Uber Eats",tag:"Neighborhood Chinese",dishes:"Dumplings · sesame chicken · pork egg rolls",review:"A Ringwood Chinese takeout option. App rating has too few reviews to rely on.",sample:"See live Uber Eats menu",miles:3,ue:"https://www.ubereats.com/store/spring-restaurant/_O7seN43UuaOhFybYdQTgw"}
 ];
 const pics={
+money:["https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=900&q=70","🌮"],
+epoch:["https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=900&q=70","🍣"],
 thai:["https://images.unsplash.com/photo-1707546944460-dda9069b9c1e?auto=format&fit=crop&w=900&q=70","🍜"],
 som:["https://unsplash.com/photos/TgptxYRWZLo/download?force=true&w=900","🌮"],
 luigi:["https://images.unsplash.com/photo-1564936281291-294551497d81?auto=format&fit=crop&w=900&q=70","🍕"],
@@ -98,6 +128,8 @@ sam:["https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&f
 spring:["https://unsplash.com/photos/g7ue2JBhDro/download?force=true&w=900","🥟"]
 };
 const addresses={
+  money:"16 Skyline Lakes Drive, Ringwood, NJ 07456",
+  epoch:"98 Wanaque Avenue, Pompton Lakes, NJ 07442",
   thai:"2111 Hamburg Turnpike, Wayne, NJ 07470",
   som:"53 Wanaque Avenue, Pompton Lakes, NJ 07442",
   luigi:"16 Skyline Lakes Drive, Ringwood, NJ 07456",
@@ -125,9 +157,13 @@ function currentList(){let a=restaurants.filter(p=>active==="All"||p.kind.toLowe
 function render(){
 const items=currentList();
 $("cards").innerHTML=items.map(p=>{
-const photo=pics[p.id]||["","🍽️"]; const main=menuUrl(p);
-const extras=[p.dd&&main!==p.dd?'<a href="'+p.dd+'" target="_blank" rel="noopener noreferrer">DoorDash</a>':"",p.ue&&main!==p.ue?'<a href="'+p.ue+'" target="_blank" rel="noopener noreferrer">Uber Eats</a>':"",p.direct&&main!==p.direct?'<a href="'+p.direct+'" target="_blank" rel="noopener noreferrer">Order direct</a>':""].filter(Boolean).join("");
-return '<article class="card"><div class="photo"><span class="emoji">'+photo[1]+'</span><img src="'+photo[0]+'" alt="Illustrative '+p.kind+' meal" loading="lazy" decoding="async" onerror="this.style.display=\'none\'"><span class="tag">'+p.kind+'</span></div><div class="card-body"><h2>'+p.name+'</h2><p class="town">'+p.town+', NJ</p><p class="popular">'+p.dishes+'</p><p class="caption">'+p.review+'</p><div class="spacer"></div><div class="primaryBtns">'+link(main,"Menu")+link(mapsReviews(p),"Reviews")+link(mapsDistance(p),"Distance")+'</div><div class="also">'+(extras?"Also: "+extras:"Menu opens "+menuName(p))+'</div></div></article>';
+const photo=pics[p.id]||["","🍽️"];
+const platformLinks=[
+p.dd?'<a class="platformBtn doordash" aria-label="Open '+p.name+' DoorDash menu" href="'+p.dd+'" target="_blank" rel="noopener noreferrer"><span>Menu</span><b>DoorDash ↗</b></a>':"",
+p.ue?'<a class="platformBtn uber" aria-label="Open '+p.name+' Uber Eats menu" href="'+p.ue+'" target="_blank" rel="noopener noreferrer"><span>Menu</span><b>Uber Eats ↗</b></a>':"",
+p.direct?'<a class="platformBtn direct" aria-label="Open '+p.name+' direct ordering menu" href="'+p.direct+'" target="_blank" rel="noopener noreferrer"><span>Menu</span><b>Order direct ↗</b></a>':""
+].filter(Boolean).join("");
+return '<article class="card"><div class="photo"><span class="emoji">'+photo[1]+'</span><img src="'+photo[0]+'" alt="Illustrative '+p.kind+' meal" loading="lazy" decoding="async" onerror="this.style.display=\'none\'"><span class="tag">'+p.kind+'</span></div><div class="card-body"><div class="card-head"><h2>'+p.name+'</h2><span class="place">'+p.town+'</span></div><p class="featuredDish">🍴 '+p.dishes+'</p><p class="why">'+p.review+'</p><div class="spacer"></div><div class="platforms">'+platformLinks+'</div><div class="supportLinks"><a href="'+mapsReviews(p)+'" target="_blank" rel="noopener noreferrer" aria-label="See Google reviews of '+p.name+'">☆ Reviews ↗</a><a href="'+mapsDistance(p)+'" target="_blank" rel="noopener noreferrer" aria-label="See live driving distance to '+p.name+'">⌁ Distance ↗</a></div></div></article>';
 }).join("");
 $("count").textContent=items.length+" restaurants";
 $("chips").innerHTML=types.map(t=>'<button class="chip '+(t===active?"active":"")+'" data-type="'+t+'">'+t+'</button>').join("");
